@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+body {
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 100px 20px;
+  box-sizing: border-box;
+  background-image: url(images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container .card {
+  position: relative;
+  width: 300px;
+  height: 425px;
+  margin: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+}
+
+.container .card .imgBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  transition: 1.5s ease-in-out;
+}
+
+.container .card:hover .imgBox {
+  transform: translateY(-100px);
+}
+
+.container .card .imgBox img {
+  max-width: 100%;
+  margin: 0 0 10px;
+  transition: 0.5s ease-in-out;
+}
+
+.container .card:hover .imgBox img {
+  transform: translate(-0px, -20px) rotate(-360deg) scale(1);
+}
+
+.container .card .imgBox h2 {
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 18px;
+  padding: 0px 20px;
+}
+
+.projDesp {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.container .card .content {
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.container .card:hover .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media only screen and (max-width: 426px) {
+  h1 {
+    text-align: left;
+    margin-left: 5%;
+  }
+
+  .content {
+    padding: 5px;
+  }
+
+  .container .card {
+    height: 415px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 18px;
+    padding: 0px 15px;
+  }
+}
+
+@media only screen and (max-width: 769px) and (min-width: 426px) {
+  .container .card:hover .imgBox {
+    transform: translateY(-100px);
+  }
+
+  .container .card:hover .imgBox img {
+    transform: translate(-20px, -20px) rotate(-360deg) scale(1.3);
+  }
+
+  .container .card:hover .content {
+    opacity: 1;
+    visibility: visible;
+  }
+  h1 {
+    text-align: left;
+    margin-left: 20%;
+  }
+}
